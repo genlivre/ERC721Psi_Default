@@ -1,0 +1,30 @@
+①コントラクトをデプロイする
+https://play-nft.art/contracts/new
+
+②ロイヤリティ情報を登録する
+18.setRoyalty
+_royaltyAddressに「0x9EfA220e89Cbd7d9F282c656A0d2ce8B8E8c923E」
+_feeNumeratorに「1000」を入力。
+
+③報酬分配アドレスを登録する
+12.setMemberAddress
+それぞれ対応するアドレスを入力する。
+
+④リビール前のURIを登録する
+19.setUnrevealedURI
+https://d2tnrjjpld3h2t.cloudfront.net/rvltd/unrevealed/metadata.json
+
+⑤WhiteList用のMerkleRootを登録する
+13.setMerkleRoot
+中身は紐付けるアドレスによって変動するので、都度エンジニアより共有してもらい、入力する。
+
+⑥運営保有分を配布する
+2.ownerMint
+（各プロフィール対応のものを1点づつ配布）
+0x9EfA220e89Cbd7d9F282c656A0d2ce8B8E8c923E, 1
+0x3168ad7BEED95C5F58356Ca3c9aA961E57b1b48C, 1
+0x7Abb65089055fB2bf5b247c89E3C11F7dB861213, 1
+0xf2fd31926B3bc3fB47C108B31cC0829F20DeE4c0, 1
+0x40a6a21B4a0e988D990E4edbfC7389061F76e6DF, 1
+
+（各アドレスに対応する枚数分づつ配布）
