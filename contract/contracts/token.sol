@@ -6,8 +6,10 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/common/ERC2981.sol";
-import "erc721psi/contracts/ERC721Psi.sol";
-import "operator-filter-registry/src/DefaultOperatorFilterer.sol";
+// import "erc721psi/contracts/ERC721Psi.sol"; // token IDが0開始の場合
+import "./ERC721Psi.sol"; // token IDが1開始の場合
+// import "operator-filter-registry/src/DefaultOperatorFilterer.sol";
+import "./operator-filter-registry/src/DefaultOperatorFilterer.sol";
 
 contract TOKEN is
     ERC721Psi,
