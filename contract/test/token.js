@@ -218,11 +218,11 @@ describe('withdraw', function () {
 
     // メンバーのアドレスを設定する
     const address = {
-      founder: '0xB198c2506B5D8571e43E88Cd669789179F551d0C',
-      illustrator: '0xB198c2506B5D8571e43E88Cd669789179F551d0C',
-      developer: '0xB198c2506B5D8571e43E88Cd669789179F551d0C',
-      marketer: '0xB198c2506B5D8571e43E88Cd669789179F551d0C',
-      musician: '0xB198c2506B5D8571e43E88Cd669789179F551d0C',
+      founder: account1.address,
+      illustrator: account1.address,
+      developer: account1.address,
+      marketer: account1.address,
+      musician: account1.address,
     }
 
     // 報酬分配先を登録
@@ -254,24 +254,22 @@ describe('OpenSea Operator Filterの確認', function () {
   })
 })
 
-// describe('tokenIdが1~1000になるかをチェック', function () {
-//   it('tokenIdが1~1000になるかをチェック', async () => {
-//     const [account] = await ethers.getSigners()
-//     const contract = await ethers.getContractFactory('TOKEN')
-//     const token = await contract.deploy()
-//     await token.deployed()
+describe('tokenIdが1~1000になるかをチェック', function () {
+  it('tokenIdが1~1000になるかをチェック', async () => {
+    const [account] = await ethers.getSigners()
+    const contract = await ethers.getContractFactory('TOKEN')
+    const token = await contract.deploy()
+    await token.deployed()
 
-//     await token.ownerMint(account.address, 1000 - 150)
-//     const totalSupply = await token.totalSupply()
-//     console.log(totalSupply)
+    await token.ownerMint(account.address, 1000)
+    const totalSupply = await token.totalSupply()
+    expect(totalSupply).to.equal(1000)
 
-//     let tokenOfOwnerByIndex = await token.tokenOfOwnerByIndex(
-//       account.address,
-//       1
-//     )
-//     console.log(tokenOfOwnerByIndex)
-
-//     tokenOfOwnerByIndex = await token.tokenOfOwnerByIndex(account.address, 1)
-//     console.log(tokenOfOwnerByIndex)
-//   })
-// })
+    let tokenOfOwnerByIndex = await token.tokenOfOwnerByIndex(
+      account.address,
+      0
+    )
+    expect(tokenOfOwnerByIndex).to.equal(1)
+    console.log(tokenOfOwnerByIndex)
+  })
+})
