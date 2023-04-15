@@ -60,3 +60,7 @@ $ cp .env.dummy .env
 ### hardhat の compile 情報をクリア
 
 `npx hardhat clean`
+
+# 1 アドレスに対して AL を複数枚付与するには
+
+**VerifyMerkleProof.sol**を利用することで、1 アドレスに対して複数の AL を付与できます。
