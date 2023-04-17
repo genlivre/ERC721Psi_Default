@@ -52,6 +52,7 @@ $ cp .env.dummy .env
 ### etherscan へ verify
 
 `npx hardhat verify --contract contracts/token.sol:TOKEN --network goerli デプロイしたコントラクトAddress`
+`npx hardhat verify --contract contracts/VerifyMerkleProof.sol:VerifyMerkleProof --network goerli 0xe28a296937240E68455c7c34Ad45A2C7B2922c1C`
 
 ### 本番
 
